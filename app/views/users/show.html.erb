@@ -1,37 +1,45 @@
-<div class="container mt-3">
 <h2>マイページ</h2>
+<div class="container mt-3">
 
-  <%= attachment_image_tag @user, :profile_image_id, format: "jpeg", fallback: "no_image.jpg", size: "100x100" %>
-  <table class="table">
-    <tbody>
-       <tr>
-         <th>ユーザーネーム</th>
-         <th><%= @user.name %></th>
-       </tr>
-         <th>自己紹介</th>
-         <th><%= @user.introduction %></th>
-       </tr>
-       <tr>
-         <th>投稿</th>
-         <th></th>
-       </tr>
-       <tr>
-         <th>フォロー中</th>
-         <th>
+ <div class="row">
+   <div class="col-md-5">
 
-         </th>
-       </tr>
-       <tr>
-         <th>フォロワー</th>
-         <th>
-
-         </th>
-       </tr>
-    </tbody>
-  </table>
-  <div class="row">
-     <%= link_to edit_user_path(@user.id), class:"btn btn-outline-secondary btn-block" do %>
-      　  <i class="fas fa-user-cog"></i>
-     <% end %>
-  </div>
+     <%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "130x130" %>
+       <table class="table">
+        <tbody>
+         <tr>
+           <th>ネーム</th>
+           <th><%= @user.name %></th>
+         </tr>
+           <th>自己紹介</th>
+           <th><%= @user.introduction %></th>
+         </tr>
+         <tr>
+           <th>投稿数</th>
+           <th></th>
+         </tr>
+         <tr>
+           <th>フォロー中</th>
+           <th></th>
+         </tr>
+         <tr>
+           <th>フォロワー</th>
+           <th></th>
+         </tr>
+        </tbody>
+       </table>
+        <% if @user.id == current_user.id %>
+         <div class="row">
+          <%= link_to edit_user_path(@user.id), class:"btn btn-outline-secondary btn-block" do %>
+      　     <i class="fas fa-user-cog"></i>
+          <% end %>
+         </div>
+        <% end %>
+        <%= link_to "ユーザーを探す", users_path %>
+        <%= link_to "投稿する", new_post_path %>
+   </div>
+   　<div class="col-md-5">
+   　 あああ
+   　</div>
+ </div>
 </div>

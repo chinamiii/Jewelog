@@ -14,3 +14,17 @@
  *= require_self
  */
  @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+
+ body{
+   font-family: 'ヒラギノ丸ゴ Pro', 'Wawati SC', '游明朝','Yu Mincho', '游明朝体', 'YuMincho','ＭＳ Ｐ明朝', 'MS PMincho', serif;
+  }
+
+.item_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+ margin-right: 20px;
+}
